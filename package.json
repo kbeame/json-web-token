@@ -1,0 +1,27 @@
+{
+  "name": "json-web-token",
+  "version": "1.0.0",
+  "description": "json-web-token",
+  "main": "server.js",
+  "scripts": {
+    "test": "mocha",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kbeame/json-web-token.git"
+  },
+  "author": "kbeame",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kbeame/json-web-token/issues"
+  },
+  "homepage": "https://github.com/kbeame/json-web-token#readme",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "express": "^4.13.4",
+    "jsonwebtoken": "^5.7.0",
+    "mongoose": "^4.4.13",
+    "morgan": "^1.7.0"
+  }
+}
