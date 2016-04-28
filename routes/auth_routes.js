@@ -14,8 +14,8 @@ router.post('/sign_up', jsonParser, (req, res) => {
   password = null;
   newUser.save((err, data) => {
     if (err) return res.status(500).json({msg: 'could not create user'});
-    // TODO (xxx) send a jwt on a successful user creation
-    res.json({msg: 'user created!'});
+
+    res.json({token});
   });
 });
 
@@ -24,6 +24,9 @@ router.get('/signin', basicHttp, (req, res) => {
     if (err) res.status(500).json({ msg: 'could not authenticate' });
     if (!user) return res.status(500).json({ msg: 'could not authenticate'});
     if (!user.compareHash(req.auth.password)) return res.status(500).json({ msg: 'could not authenticate'});
-    res.json({ msg: 'authenticate says yes' });
+    if (err) return res.status(500).json({msg: 'could not create user'});
+
+    res.json({token});
+  });
   });
 });
